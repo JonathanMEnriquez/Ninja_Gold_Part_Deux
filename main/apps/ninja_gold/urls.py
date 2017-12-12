@@ -7,4 +7,6 @@ urlpatterns = [
     url(r'^cave$', views.cave),
     url(r'^house$', views.house),
     url(r'^casino$', views.casino),
+    url(r'^gameover$', views.gameover),
+    url(r'^no$', views.no),
 ]

@@ -82,3 +82,43 @@
 .red{
     color: red;
 }
+
+/* gameover */
+
+#wrap_over{
+    background-color: rgba(197, 197, 197, 0.555);
+    border: 1px solid darkgray;
+    margin: 5px;
+    padding: 15px;
+    min-height: 500px;
+    text-align: center;
+}
+
+#wrap_over h1{
+    color: red;
+    text-shadow: 2px 2px black;
+    font-size: 35px;
+}
+
+#end{
+    margin: 20px;
+    background-color: white;
+    width: 55%;
+    border: 2px solid red;
+    margin-left: 22%;
+    padding: 15px;
+    font-size: 25px;
+}
+
+#wrap_over h2{
+    color: black;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.gameover_button{
+    padding: 10px;
+    font-size: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: gold;
+}

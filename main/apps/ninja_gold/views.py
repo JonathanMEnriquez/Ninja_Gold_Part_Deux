@@ -14,6 +14,8 @@ def index(request):
         request.session['activities']
     except:
         request.session['activities'] = []
+    if request.session['gold'] < 0:
+        return redirect('/gameover')
     return render(request, 'ninja_gold/index.html')
 
 def farm(request):
@@ -71,7 +73,7 @@ def casino(request):
             action_dict['color'] = 'green'
         elif earnings < 0:
             earnings *= -1
-            statement = 'What would your mother say if she found out you lost {} gold gambling your hard-earned money away?'.format(earnings)
+            statement = 'What would your mother say if she found out you lost {} of your hard-earned gold on gambling?'.format(earnings)
             action_dict['color'] = 'red'
         else:
             statement = 'Well...that was some wasted time. You won nothing at the casino. At least you did not lose, amirite?'
@@ -82,3 +84,11 @@ def casino(request):
         return redirect('/')
     else:
         return redirect('/')
+
+def gameover(request):
+    request.session['gold'] = 0
+    request.session['activities'] = []
+    return render(request, 'ninja_gold/gameover.html')
+
+def no(request):
+    return HttpResponse('Wow. I did not take you for a quitter. Your mother and I are really disappointed...')
